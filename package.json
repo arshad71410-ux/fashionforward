@@ -1,0 +1,10 @@
+{
+  "name": "fashion-forward",
+  "version": "1.0.0",
+  "description": "Fashion Forward Premium Clothing Website",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "author": "Sahina",
+  "license": "ISC"
+}

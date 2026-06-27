@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Fashion Forward</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .checkout-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+    .checkout-form {
+      flex: 1 1 60%;
+    }
+    .order-summary {
+      flex: 1 1 35%;
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 4px;
+      height: fit-content;
+    }
+    .payment-options {
+      margin-top: 2rem;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .payment-option input {
+      margin-right: 1rem;
+    }
+    .checkout-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Fashion Forward</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-icon" style="display: flex; align-items: center; gap: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="container">
+    <div class="page-header">
+      <h1>Checkout</h1>
+    </div>
+
+    <div class="checkout-container">
+      <div class="checkout-form">
+        <h2>Billing & Shipping Details</h2>
+        <form id="checkout-form" action="#" method="POST" style="margin-top: 1.5rem;">
+          <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <div style="flex: 1;">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" class="form-control" required>
+            </div>
+            <div style="flex: 1;">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" class="form-control" required>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <div style="flex: 1;">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div style="flex: 1;">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" required>
+            </div>
+          </div>
+          <div style="margin-bottom: 1rem;">
+            <label for="address">Full Address</label>
+            <input type="text" id="address" class="form-control" placeholder="House number and street name" required>
+          </div>
+          <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <div style="flex: 1;">
+              <label for="city">City</label>
+              <input type="text" id="city" class="form-control" required>
+            </div>
+            <div style="flex: 1;">
+              <label for="state">State</label>
+              <input type="text" id="state" class="form-control" required>
+            </div>
+            <div style="flex: 1;">
+              <label for="pincode">Pincode</label>
+              <input type="text" id="pincode" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="payment-options">
+            <h2>Payment Method</h2>
+            <div class="payment-option">
+              <input type="radio" id="razorpay" name="payment" value="razorpay" checked>
+              <label for="razorpay" style="width: 100%; cursor: pointer;">
+                <strong>Razorpay</strong>
+                <p style="margin: 0; font-size: 0.85rem; color: var(--text-light);">Pay securely via UPI, Credit/Debit Card, or Netbanking.</p>
+              </label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" id="cashfree" name="payment" value="cashfree">
+              <label for="cashfree" style="width: 100%; cursor: pointer;">
+                <strong>Cashfree Payments</strong>
+                <p style="margin: 0; font-size: 0.85rem; color: var(--text-light);">Fast and reliable payment processing.</p>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn" style="width: 100%; margin-top: 2rem; padding: 1rem; font-size: 1.1rem;">Place Order & Pay</button>
+        </form>
+      </div>
+
+      <div class="order-summary">
+        <h2 style="margin-bottom: 1.5rem;">Order Summary</h2>
+        <div id="checkout-items">
+          <!-- Items injected here by JS -->
+        </div>
+        <div class="summary-total">
+          <span>Total:</span>
+          <span id="checkout-total">₹0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Fashion Forward</h4>
+          <p style="color: var(--text-light); font-size: 0.9rem;">Redefining premium minimalist fashion. Designed with purpose and passion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="refund.html">Cancellation & Refund</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fashion Forward. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

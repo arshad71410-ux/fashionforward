@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Fashion Forward</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Fashion Forward</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-icon" style="display: flex; align-items: center; gap: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="container">
+    <div class="page-header">
+      <h1>The Collection</h1>
+      <p style="color: var(--text-light); margin-top: 1rem;">Meticulously crafted premium garments for the modern minimalist.</p>
+    </div>
+
+    <div class="product-grid" id="shop-grid">
+      <!-- 15 Unique Products -->
+      <div class="product-card" data-id="prod-1">
+        <img src="assets/coat.png" alt="Noir Cashmere Coat" class="product-img">
+        <h3 class="product-title">Noir Cashmere Coat</h3>
+        <p class="product-price">₹12,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-2">
+        <img src="assets/tshirt.png" alt="Signature White Tee" class="product-img">
+        <h3 class="product-title">Signature White Tee</h3>
+        <p class="product-price">₹2,499</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-3">
+        <img src="assets/trousers.png" alt="Tailored Black Trousers" class="product-img">
+        <h3 class="product-title">Tailored Black Trousers</h3>
+        <p class="product-price">₹4,499</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-4">
+        <img src="assets/blazer.png" alt="Ivory Premium Blazer" class="product-img">
+        <h3 class="product-title">Ivory Premium Blazer</h3>
+        <p class="product-price">₹8,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-5">
+        <img src="assets/hoodie.png" alt="Heavyweight Black Hoodie" class="product-img">
+        <h3 class="product-title">Heavyweight Black Hoodie</h3>
+        <p class="product-price">₹3,500</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-6">
+        <img src="assets/dress.png" alt="Silk Minimalist Dress" class="product-img">
+        <h3 class="product-title">Silk Minimalist Dress</h3>
+        <p class="product-price">₹7,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-7">
+        <img src="assets/skirt.png" alt="Structured Midi Skirt" class="product-img">
+        <h3 class="product-title">Structured Midi Skirt</h3>
+        <p class="product-price">₹3,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-8">
+        <img src="assets/jeans.png" alt="Charcoal Denim Jeans" class="product-img">
+        <h3 class="product-title">Charcoal Denim Jeans</h3>
+        <p class="product-price">₹4,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-9">
+        <img src="assets/jacket.png" alt="Onyx Leather Jacket" class="product-img">
+        <h3 class="product-title">Onyx Leather Jacket</h3>
+        <p class="product-price">₹14,500</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-10">
+        <img src="assets/trench.png" alt="Classic Beige Trench" class="product-img">
+        <h3 class="product-title">Classic Beige Trench</h3>
+        <p class="product-price">₹11,799</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-11">
+        <img src="assets/polo.png" alt="Pima Cotton Polo" class="product-img">
+        <h3 class="product-title">Pima Cotton Polo</h3>
+        <p class="product-price">₹2,999</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-12">
+        <img src="assets/cardigan.png" alt="Chunky Knit Cardigan" class="product-img">
+        <h3 class="product-title">Chunky Knit Cardigan</h3>
+        <p class="product-price">₹5,199</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-13">
+        <img src="assets/shorts.png" alt="Tailored Black Shorts" class="product-img">
+        <h3 class="product-title">Tailored Black Shorts</h3>
+        <p class="product-price">₹2,500</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-14">
+        <img src="assets/scarf.png" alt="Cashmere Grey Scarf" class="product-img">
+        <h3 class="product-title">Cashmere Grey Scarf</h3>
+        <p class="product-price">₹1,500</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+
+      <div class="product-card" data-id="prod-15">
+        <img src="assets/shirt.png" alt="Silk Button-Down Shirt" class="product-img">
+        <h3 class="product-title">Silk Button-Down Shirt</h3>
+        <p class="product-price">₹5,500</p>
+        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Fashion Forward</h4>
+          <p style="color: var(--text-light); font-size: 0.9rem;">Redefining premium minimalist fashion. Designed with purpose and passion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="refund.html">Cancellation & Refund</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fashion Forward. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

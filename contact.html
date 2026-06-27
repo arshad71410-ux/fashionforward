@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Fashion Forward</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">Fashion Forward</a></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="cart-icon" style="display: flex; align-items: center; gap: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="container">
+    <div class="page-header">
+      <h1>Contact Us</h1>
+      <p style="color: var(--text-light); margin-top: 1rem;">We're here to assist you with any inquiries.</p>
+    </div>
+
+    <div class="content-wrapper">
+      <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully.');">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Reach Out Directly</h3>
+        <p><strong>Email:</strong> support@fashionforward.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Operating Address:</strong> Haryana, 122104, India</p>
+        <p><strong>GSTIN:</strong> 06SOUPS7886N1ZZ</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-light);">Our support team is available Monday to Friday, 9:00 AM to 6:00 PM IST.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Fashion Forward</h4>
+          <p style="color: var(--text-light); font-size: 0.9rem;">Redefining premium minimalist fashion. Designed with purpose and passion.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="shipping.html">Shipping & Delivery</a></li>
+            <li><a href="refund.html">Cancellation & Refund</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fashion Forward. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
