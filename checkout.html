@@ -18,39 +18,56 @@
     }
     .order-summary {
       flex: 1 1 35%;
-      background-color: #f9f9f9;
-      padding: 2rem;
-      border-radius: 4px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
       height: fit-content;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
     .payment-options {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
     .payment-option {
       display: flex;
       align-items: center;
-      padding: 1rem;
-      border: 1px solid #ddd;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      background-color: var(--bg-surface);
       margin-bottom: 1rem;
-      border-radius: 4px;
+      border-radius: 12px;
       cursor: pointer;
+      transition: var(--transition);
+    }
+    .payment-option:hover {
+      border-color: var(--primary-mid);
+      box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
     }
     .payment-option input {
-      margin-right: 1rem;
+      margin-right: 1.2rem;
+      accent-color: var(--primary);
     }
     .checkout-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #eee;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
     }
     .summary-total {
       display: flex;
       justify-content: space-between;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 600;
       margin-top: 2rem;
+      color: var(--text-color);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
     }
   </style>
   <link rel="icon" type="image/png" href="assets/favicon.png">

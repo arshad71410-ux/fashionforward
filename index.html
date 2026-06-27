@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fashion Forward | Premium Clothing</title>
+  <title>Fashion Forward | Premium Colourful Clothing</title>
+  <meta name="description" content="Fashion Forward — discover our exclusive collection of premium, vibrant clothing designed for the modern individual.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+
   <div class="container">
     <nav class="navbar">
       <div class="logo"><a href="index.html">Fashion Forward</a></div>
@@ -16,130 +18,232 @@
         <li><a href="shop.html">Shop</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li class="cart-icon" style="display: flex; align-items: center; gap: 5px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></li>
+        <li class="cart-icon" style="display:flex;align-items:center;gap:5px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="cart-count">0</span>
+        </li>
       </ul>
     </nav>
   </div>
 
-  <section class="container hero" style="display: flex; gap: 2rem; text-align: left; background-color: transparent;">
-    <div class="hero-content" style="flex: 1;">
-      <h1 style="font-size: 3.5rem;">Elevate Your Style.</h1>
-      <p style="font-size: 1.1rem; max-width: 100%;">Discover our exclusive collection of premium, minimalist clothing designed for the modern individual.</p>
-      <a href="shop.html" class="btn">Shop Collection</a>
+  <!-- Hero -->
+  <section class="container hero" style="display:flex;gap:3rem;text-align:left;background-color:transparent;min-height:75vh;">
+    <div class="hero-content" style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+      <h1 style="font-size:3.8rem;">Dress Bold.<br>Live Loud.</h1>
+      <p style="font-size:1.1rem;max-width:480px;">Discover our exclusive collection of premium, vibrant clothing — crafted for the modern individual who refuses to blend in.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="shop.html" class="btn">Shop All 50 Styles</a>
+        <a href="shop.html" class="btn btn-outline">New Arrivals</a>
+      </div>
     </div>
-    <div class="hero-image" style="flex: 1;">
-      <img src="assets/hero.png" alt="Fashion Forward Hero" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="hero-image" style="flex:1;max-height:600px;">
+      <img src="assets/hero.png" alt="Fashion Forward Hero" style="width:100%;height:100%;object-fit:cover;border-radius:24px;">
     </div>
   </section>
 
+  <!-- 15 Featured Products — each unique Unsplash real clothing photo -->
   <section class="container">
-    <h2 class="section-title">Our Collection</h2>
+    <h2 class="section-title">✨ Featured Picks</h2>
     <div class="product-grid">
-      <!-- 15 Unique Products -->
-      <div class="product-card" data-id="prod-1">
-        <img src="assets/coat.png" alt="Noir Cashmere Coat" class="product-img">
-        <h3 class="product-title">Noir Cashmere Coat</h3>
-        <p class="product-price">₹2,799</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+
+      <div class="product-card" data-id="h1">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Dress</span>
+          <img src="https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?auto=format&fit=crop&w=500&q=80" alt="Pastel Pink Slip Dress" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Pastel Pink Slip Dress</h3>
+          <p class="product-subtitle">Soft pink satin · High-heeled fit</p>
+          <p class="product-price">₹2,799</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-2">
-        <img src="assets/tshirt.png" alt="Signature White Tee" class="product-img">
-        <h3 class="product-title">Signature White Tee</h3>
-        <p class="product-price">₹3,299</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h2">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Suit</span>
+          <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?auto=format&fit=crop&w=500&q=80" alt="Royal Blue Tailored Suit" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Royal Blue Tailored Suit</h3>
+          <p class="product-subtitle">Premium fabric · Sharp modern cut</p>
+          <p class="product-price">₹4,499</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-3">
-        <img src="assets/trousers.png" alt="Tailored Black Trousers" class="product-img">
-        <h3 class="product-title">Tailored Black Trousers</h3>
-        <p class="product-price">₹2,799</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h3">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Denim</span>
+          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=500&q=80" alt="Retro High-Waist Jeans" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Retro High-Waist Jeans</h3>
+          <p class="product-subtitle">Faded indigo · Flared leg fit</p>
+          <p class="product-price">₹1,599</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-4">
-        <img src="assets/blazer.png" alt="Ivory Premium Blazer" class="product-img">
-        <h3 class="product-title">Ivory Premium Blazer</h3>
-        <p class="product-price">₹2,699</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h4">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Jacket</span>
+          <img src="https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?auto=format&fit=crop&w=500&q=80" alt="Neon Yellow Windbreaker" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Neon Yellow Windbreaker</h3>
+          <p class="product-subtitle">High-visibility yellow · Lightweight outer layer</p>
+          <p class="product-price">₹2,399</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-5">
-        <img src="assets/hoodie.png" alt="Heavyweight Black Hoodie" class="product-img">
-        <h3 class="product-title">Heavyweight Black Hoodie</h3>
-        <p class="product-price">₹2,799</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h5">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Jeans</span>
+          <img src="https://images.unsplash.com/photo-1604176354204-9268737828e4?auto=format&fit=crop&w=500&q=80" alt="Light-Wash Denim Jeans" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Light-Wash Denim Jeans</h3>
+          <p class="product-subtitle">Faded sky blue · Relaxed fit</p>
+          <p class="product-price">₹1,899</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-6">
-        <img src="assets/dress.png" alt="Silk Minimalist Dress" class="product-img">
-        <h3 class="product-title">Silk Minimalist Dress</h3>
-        <p class="product-price">₹2,199</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h6">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Tee</span>
+          <img src="https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?auto=format&fit=crop&w=500&q=80" alt="Vintage Mustard Graphic Tee" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Vintage Mustard Graphic Tee</h3>
+          <p class="product-subtitle">Solid yellow cotton · Relaxed crewneck</p>
+          <p class="product-price">₹2,999</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-7">
-        <img src="assets/skirt.png" alt="Structured Midi Skirt" class="product-img">
-        <h3 class="product-title">Structured Midi Skirt</h3>
-        <p class="product-price">₹3,399</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h7">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Knitwear</span>
+          <img src="https://images.unsplash.com/photo-1617957718614-8c23f060c2d0?auto=format&fit=crop&w=500&q=80" alt="Sunshine Yellow Knit Sweater" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Sunshine Yellow Knit Sweater</h3>
+          <p class="product-subtitle">Soft wool blend · Warm cable knit</p>
+          <p class="product-price">₹3,999</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-8">
-        <img src="assets/jeans.png" alt="Charcoal Denim Jeans" class="product-img">
-        <h3 class="product-title">Charcoal Denim Jeans</h3>
-        <p class="product-price">₹2,299</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h8">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Blouse</span>
+          <img src="https://images.unsplash.com/photo-1608748010899-18f300247112?auto=format&fit=crop&w=500&q=80" alt="Classic White Linen Blouse" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Classic White Linen Blouse</h3>
+          <p class="product-subtitle">Crisp white linen · Relaxed fit</p>
+          <p class="product-price">₹1,699</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-9">
-        <img src="assets/jacket.png" alt="Onyx Leather Jacket" class="product-img">
-        <h3 class="product-title">Onyx Leather Jacket</h3>
-        <p class="product-price">₹3,299</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h9">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Collection</span>
+          <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=500&q=80" alt="Pastel Cotton Tees Collection" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Pastel Cotton Tees Collection</h3>
+          <p class="product-subtitle">Bright multi-colour basic shirts</p>
+          <p class="product-price">₹1,799</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-10">
-        <img src="assets/trench.png" alt="Classic Beige Trench" class="product-img">
-        <h3 class="product-title">Classic Beige Trench</h3>
-        <p class="product-price">₹2,899</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h10">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Dress</span>
+          <img src="https://images.unsplash.com/photo-1579758682665-53a1a614eea6?auto=format&fit=crop&w=500&q=80" alt="Bright Striped Shirt Dress" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Bright Striped Shirt Dress</h3>
+          <p class="product-subtitle">Multi-colour stripes · Relaxed tie-belt waist</p>
+          <p class="product-price">₹2,999</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-11">
-        <img src="assets/polo.png" alt="Pima Cotton Polo" class="product-img">
-        <h3 class="product-title">Pima Cotton Polo</h3>
-        <p class="product-price">₹3,599</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h11">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Suit</span>
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=80" alt="Tailored Grey Blazer Suit" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Tailored Grey Blazer Suit</h3>
+          <p class="product-subtitle">Smart casual grey · Slim fit blazer</p>
+          <p class="product-price">₹2,499</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-12">
-        <img src="assets/cardigan.png" alt="Chunky Knit Cardigan" class="product-img">
-        <h3 class="product-title">Chunky Knit Cardigan</h3>
-        <p class="product-price">₹3,899</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h12">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Trench</span>
+          <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=500&q=80" alt="Classic Beige Trench Coat" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Classic Beige Trench Coat</h3>
+          <p class="product-subtitle">Warm sand beige · Double-breasted belt</p>
+          <p class="product-price">₹3,199</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-13">
-        <img src="assets/shorts.png" alt="Tailored Black Shorts" class="product-img">
-        <h3 class="product-title">Tailored Black Shorts</h3>
-        <p class="product-price">₹2,599</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h13">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Collection</span>
+          <img src="https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=500&q=80" alt="Rainbow Outerwear Rack" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Rainbow Outerwear Rack</h3>
+          <p class="product-subtitle">Curated colorful casual jackets</p>
+          <p class="product-price">₹4,299</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-14">
-        <img src="assets/scarf.png" alt="Cashmere Grey Scarf" class="product-img">
-        <h3 class="product-title">Cashmere Grey Scarf</h3>
-        <p class="product-price">₹3,499</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h14">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Ethnic</span>
+          <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&w=500&q=80" alt="Emerald & Rose Silk Saree" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Emerald & Rose Silk Saree</h3>
+          <p class="product-subtitle">Traditional festive drape · Rich fabric</p>
+          <p class="product-price">₹1,599</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
 
-      <div class="product-card" data-id="prod-15">
-        <img src="assets/shirt.png" alt="Silk Button-Down Shirt" class="product-img">
-        <h3 class="product-title">Silk Button-Down Shirt</h3>
-        <p class="product-price">₹3,499</p>
-        <button class="btn btn-outline add-to-cart" style="width: 100%;">Add to Cart</button>
+      <div class="product-card" data-id="h15">
+        <div class="product-img-wrapper">
+          <span class="product-tag">Collection</span>
+          <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?auto=format&fit=crop&w=500&q=80" alt="Dynamic Colorful Apparel Display" class="product-img">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Dynamic Colorful Apparel Display</h3>
+          <p class="product-subtitle">Assorted premium garments in bright shades</p>
+          <p class="product-price">₹3,499</p>
+          <button class="btn btn-outline add-to-cart" style="width:100%;">Add to Cart</button>
+        </div>
       </div>
+
+    </div>
+    <div style="text-align:center;margin-bottom:5rem;">
+      <a href="shop.html" class="btn" style="font-size:1rem;padding:1rem 3rem;">View All 50 Products →</a>
     </div>
   </section>
 
@@ -148,7 +252,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h4>Fashion Forward</h4>
-          <p style="color: var(--text-light); font-size: 0.9rem;">Redefining premium minimalist fashion. Designed with purpose and passion.</p>
+          <p>Redefining premium fashion with bold colours and timeless design.</p>
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
@@ -167,13 +271,12 @@
         <div class="footer-col">
           <h4>Legal</h4>
           <ul>
-            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="shipping.html">Shipping & Delivery</a></li>
-            <li><a href="refund.html">Cancellation & Refund</a></li>
-            <li style="margin-top: 1rem; color: var(--text-light); font-size: 0.85rem; line-height: 1.4;">
-              Owner: Sahina<br>
-              GSTIN: 06SOUPS7886N1ZZ
+            <li><a href="shipping.html">Shipping &amp; Delivery</a></li>
+            <li><a href="refund.html">Cancellation &amp; Refund</a></li>
+            <li style="margin-top:1rem;color:var(--text-muted);font-size:0.85rem;line-height:1.4;">
+              Owner: Sahina<br>GSTIN: 06SOUPS7886N1ZZ
             </li>
           </ul>
         </div>

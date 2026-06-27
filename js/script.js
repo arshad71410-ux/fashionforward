@@ -1,25 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Inject Cart Modal HTML
   const cartModalHTML = `
-    <div id="cart-modal" class="cart-modal" style="display: none; position: fixed; top: 0; right: 0; width: 400px; max-width: 100%; height: 100vh; background: var(--secondary-color); box-shadow: -5px 0 15px rgba(0,0,0,0.1); z-index: 1000; flex-direction: column; transition: transform 0.3s ease;">
-      <div style="display: flex; justify-content: space-between; align-items: center; padding: 2rem; border-bottom: 1px solid #eee;">
-        <h2 style="font-size: 1.5rem; margin: 0;">Your Cart</h2>
-        <button id="close-cart" style="background: none; border: none; font-size: 2rem; cursor: pointer;">&times;</button>
+    <div id="cart-modal" class="cart-modal" style="display: none; position: fixed; top: 0; right: 0; width: 420px; max-width: 100%; height: 100vh; background: rgba(20, 20, 42, 0.95); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border-left: 1px solid var(--border); box-shadow: -10px 0 35px rgba(0,0,0,0.5); z-index: 1000; flex-direction: column; transition: transform 0.3s ease;">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border);">
+        <h2 style="font-size: 1.4rem; margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; background: linear-gradient(135deg, var(--primary-mid), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Your Cart</h2>
+        <button id="close-cart" style="background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--text-muted); line-height: 1; transition: color 0.2s;">&times;</button>
       </div>
-      <div id="cart-items" style="flex: 1; overflow-y: auto; padding: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+      <div id="cart-items" style="flex: 1; overflow-y: auto; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
         <!-- Cart items will be injected here -->
       </div>
-      <div style="padding: 2rem; border-top: 1px solid #eee; background: #fff;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 600; font-size: 1.2rem;">
-          <span>Total:</span>
-          <span id="cart-total">₹0</span>
+      <div style="padding: 2rem; border-top: 1px solid var(--border); background: var(--bg-surface);">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-weight: 600; font-size: 1.2rem; color: var(--text-color);">
+          <span style="font-weight: 500; color: var(--text-muted);">Total:</span>
+          <span id="cart-total" style="color: var(--text-color);">₹0</span>
         </div>
-        <button id="checkout-btn" class="btn" style="width: 100%;">Proceed to Checkout</button>
+        <button id="checkout-btn" class="btn" style="width: 100%; padding: 1rem; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 8px;">Proceed to Checkout</button>
       </div>
     </div>
-    <div id="cart-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); z-index: 999;"></div>
+    <div id="cart-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(13, 13, 26, 0.7); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 999;"></div>
   `;
   document.body.insertAdjacentHTML('beforeend', cartModalHTML);
+
+  const closeCartBtn = document.getElementById('close-cart');
+  if (closeCartBtn) {
+    closeCartBtn.style.outline = 'none';
+    closeCartBtn.addEventListener('mouseenter', () => { closeCartBtn.style.color = 'var(--text-color)'; });
+    closeCartBtn.style.transition = 'color 0.2s ease';
+    closeCartBtn.addEventListener('mouseleave', () => { closeCartBtn.style.color = 'var(--text-muted)'; });
+  }
 
   const cartModal = document.getElementById('cart-modal');
   const cartOverlay = document.getElementById('cart-overlay');
@@ -59,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartItemsContainer.innerHTML = '';
     
     if (cart.length === 0) {
-      cartItemsContainer.innerHTML = '<p style="text-align: center; color: var(--text-light); margin-top: 2rem;">Your cart is empty.</p>';
+      cartItemsContainer.innerHTML = '<p style="text-align: center; color: var(--text-muted); margin-top: 2rem; font-size: 0.95rem;">Your cart is empty.</p>';
       cartTotalEl.textContent = '₹0';
       return;
     }
@@ -73,12 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
       itemEl.style.display = 'flex';
       itemEl.style.justifyContent = 'space-between';
       itemEl.style.alignItems = 'center';
+      itemEl.style.paddingBottom = '1rem';
+      itemEl.style.borderBottom = '1px solid rgba(124, 58, 237, 0.15)';
       itemEl.innerHTML = `
-        <div style="flex: 1;">
-          <h4 style="margin: 0 0 0.5rem 0;">${item.title}</h4>
-          <p style="margin: 0; color: var(--text-light);">${item.price} x ${item.quantity}</p>
+        <div style="display: flex; gap: 1rem; align-items: center; width: 100%;">
+          <img src="${item.img || 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=100&q=80'}" alt="${item.title}" style="width: 65px; height: 65px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border);">
+          <div style="flex: 1;">
+            <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; color: var(--text-color); font-weight: 500; font-family: 'Outfit', sans-serif;">${item.title}</h4>
+            <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem; font-family: 'Inter', sans-serif;">${item.price} &times; ${item.quantity}</p>
+          </div>
+          <button class="remove-item" data-index="${index}" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0.5rem; transition: color 0.2s ease; outline: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events: none;"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+          </button>
         </div>
-        <button class="remove-item btn-outline" data-index="${index}" style="padding: 0.25rem 0.75rem; border-color: #ccc; font-size: 0.8rem;">Remove</button>
       `;
       cartItemsContainer.appendChild(itemEl);
     });
@@ -86,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cartTotalEl.textContent = '₹' + total.toLocaleString('en-IN');
     
     document.querySelectorAll('.remove-item').forEach(btn => {
+      btn.addEventListener('mouseenter', () => { btn.style.color = '#ef4444'; });
+      btn.addEventListener('mouseleave', () => { btn.style.color = 'var(--text-muted)'; });
       btn.addEventListener('click', (e) => {
         const idx = e.target.dataset.index;
         cart.splice(idx, 1);
@@ -162,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const productId = productCard.dataset.id;
       const title = productCard.querySelector('.product-title').textContent;
       const price = productCard.querySelector('.product-price').textContent;
+      const img = productCard.querySelector('.product-img') ? productCard.querySelector('.product-img').src : '';
 
       let cart = JSON.parse(localStorage.getItem('ff_cart')) || [];
       
@@ -169,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
-        cart.push({ id: productId, title, price, quantity: 1 });
+        cart.push({ id: productId, title, price, img, quantity: 1 });
       }
 
       localStorage.setItem('ff_cart', JSON.stringify(cart));
@@ -179,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalText = btn.textContent;
       btn.textContent = 'ADDED';
       btn.style.backgroundColor = 'var(--text-color)';
-      btn.style.color = 'var(--secondary-color)';
+      btn.style.color = 'var(--bg-color)';
       setTimeout(() => {
         btn.textContent = originalText;
         btn.style.backgroundColor = 'transparent';
