@@ -410,11 +410,18 @@ footer {
 .footer-col ul li a:hover { color: var(--primary-mid); }
 
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
   color: var(--text-muted);
   font-size: 0.8rem;
   border-top: 1px solid var(--border);
   padding-top: 2rem;
+}
+
+.footer-business {
+  text-align: right;
 }
 
 /* ── Content / Policies ── */
@@ -463,42 +470,6 @@ textarea.form-control { resize: vertical; min-height: 150px; }
 
 .contact-info p { margin-bottom: 0.5rem; color: var(--text-muted); }
 
-/* ── Swatch / Illustrated Product Cards ── */
-.swatch-card .product-img-wrapper {
-  background: var(--swatch-bg, linear-gradient(135deg, #7C3AED 0%, #EC4899 100%));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 3/4;
-  position: relative;
-  overflow: hidden;
-}
-
-.swatch-card .product-img-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.swatch-card .swatch-icon {
-  font-size: 6rem;
-  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35));
-  user-select: none;
-  z-index: 1;
-  animation: floatIcon 3s ease-in-out infinite;
-}
-
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-10px); }
-}
-
-.swatch-card:hover .swatch-icon {
-  animation-duration: 1s;
-}
-
 /* ── Checkout ── */
 .checkout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
 .checkout-section h2 { font-family: 'Outfit',sans-serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-mid); }
@@ -514,4 +485,11 @@ textarea.form-control { resize: vertical; min-height: 150px; }
   .page-header h1 { font-size: 2rem; }
   .nav-links { gap: 1.2rem; }
   footer { padding: 3rem 1.5rem 2rem; }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-business {
+    text-align: left;
+  }
 }
